@@ -1,0 +1,55 @@
+D:
+
+MKDIR "D:\Projects\EntityFramework\EF_DotNetCore"
+CD "D:\Projects\EntityFramework\EF_DotNetCore"
+
+dotnet new winforms -n EF_DotNetCore
+CD "D:\Projects\EntityFramework\EF_DotNetCore\EF_DotNetCore"
+
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+dotnet add package Microsoft.Extensions.Configuration.Json
+dotnet add package Microsoft.Extensions.Configuration.Binder
+
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+... write some code ...
+App.config (ConnectionString)
+Models\AppDBContext.cs
+Models\Employee.cs
+Models\Department.cs
+...
+
+>> from Visual Studio Package Manager
+PM> Enable-Migrations
+PM> Add-Migration migrateToDB
+PM> Update-DataBase
+
+=======================================================
+
+from cmd ...
+
+GitHub:
+=======
+gh auth login --hostname GitHub.com
+gh repo create EF_DotNetCore --public
+
+? Would you like to add a .gitignore? No
+? Would you like to add a license? No
+? This will create the "EF_DotNetCore" repository on GitHub. Continue? Yes
+✓ Created repository MohamedBayomi/EF_DotNetCore on GitHub
+? Create a local project directory for "MohamedBayomi/EF_DotNetCore"? No
+
+CD "D:\Projects\EntityFramework\EF_DotNetCore"
+git init
+git add .
+git commit -m "EntityFramework (.net Core)"
+git branch -M main
+git remote add origin https://github.com/MohamedBayomi/EF_DotNetCore.git
+git push -u origin main
+
+-------------------------------------------------------
